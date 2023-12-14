@@ -6,7 +6,8 @@ const router = express.Router();
 const products = [];
 
 router.get("/product",(req,res,next)=>{
-   res.render('product',{pageTitle:"Add Product", path:"/admin/product"})
+    res.sendFile(path.join(rootDir,"views","product.html"))
+//    res.render('product',{pageTitle:"Add Product", path:"/admin/product"})
 })
 
 router.post("/product",(req,res,next)=>{
