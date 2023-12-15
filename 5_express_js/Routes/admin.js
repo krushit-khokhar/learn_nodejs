@@ -1,13 +1,10 @@
-const path = require('path');
-const rootDir = require('../util/path');
 const express = require('express');
 
 const router = express.Router();
 const products = [];
 
 router.get("/product",(req,res,next)=>{
-    res.sendFile(path.join(rootDir,"views","product.html"))
-//    res.render('product',{pageTitle:"Add Product", path:"/admin/product"})
+   res.render('product',{pageTitle:"Add Product", path:"/admin/product", activeAddProduct:true})
 })
 
 router.post("/product",(req,res,next)=>{
